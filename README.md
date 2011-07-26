@@ -1,0 +1,3 @@
+# Vim module
+
+Installs vim.

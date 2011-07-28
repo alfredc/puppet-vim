@@ -1,4 +1,4 @@
-define vimrc($user = $name, $repo) {
+define vim::vimrc($user = $name, $repo) {
 
   file { "/home/${user}/.vimrc":
     content => 'source ~/.vim/vimrc',

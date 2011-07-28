@@ -11,7 +11,7 @@ define vim::vimrc($user = $name, $repo) {
   exec { "${user} vimrc":
     command => "git clone $repo /home/${user}/.vim",
     creates => "/home/${user}/.vim",
-    require => [ Class['ssh'], Class['git'] ],
+    require => [ Package['ssh'], Package['git'] ],
   }
 
 }

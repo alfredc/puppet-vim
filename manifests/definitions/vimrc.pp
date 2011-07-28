@@ -18,7 +18,7 @@ define vim::vimrc($user = $name, $repo, $update = true) {
   # update repo on every puppet run if desired
   if $update {
     exec { "${user} vimrc update":
-      command => "cd /home/${user}/.vim && git pull && git submodule init && git submodule update",
+      command => "bash -c 'cd /home/${user}/.vim && git pull && git submodule init && git submodule update'",
       require => Exec["${user} vimrc"],
     }
   }
